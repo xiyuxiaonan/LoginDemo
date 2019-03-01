@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!--通过namespace和id实现mapper类接口方法与xml中的sql语句相对应 -->
+    <mapper namespace="com.how2java.mapper.UserMapper">
+    <!-- id与方法同名对应,传入参数User -->
+    <!-- 这里的#{name}应该指的是User的属性 -->
+        <insert id="add" parameterType="User" >
+            insert into user_ (name,password) values (#{name},#{password})    
+        </insert>
+        <select id="select" resultType="User">
+            select * from   user_      
+        </select>    
+    </mapper>
